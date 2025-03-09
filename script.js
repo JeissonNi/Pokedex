@@ -28,7 +28,7 @@ async function buscar() {
       let tipos = await traducirTipos(data.types);
       let habilidades = await traducirHabilidades(data.abilities);
 
-      // Agregar datos traducidos
+      // Agregar datos traducidos 
       document.getElementById("pokemonNumero").textContent = data.id;
       document.getElementById("pokemonTipo").textContent = tipos;
       document.getElementById("pokemonHabilidades").textContent = habilidades;
