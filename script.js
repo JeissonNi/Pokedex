@@ -14,7 +14,12 @@ async function buscar() {
           }
   
           let data = await response.json();
+          
+          //Agregar imagen
           imgPokemon.src = data.sprites.front_default;
+          
+          //Agregar nombre
+          document.getElementById("nombrePokemon").textContent = data.name;;
       } else {
           alert("No has ingresado un Pokémon válido");
       }

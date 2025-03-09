@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex</title>
-    <script src="script.js"></script>
+    <title>Pokédex</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <h1 id="titulo">Pokédex</h1>
-    <img alt="pokemon" id="imgPokemon">
-    <br>
-    <input type="text" id="entradaPokemon">
-    <button id="btnBuscar">Buscar</button>
+    <main class="container">
+        <h1 class="titulo">Pokédex</h1>
+
+        <div class="pokemon-container">
+            <br>
+            <img src="https://pokestreak.com/question.png" id="imgPokemon" class="pokemon-img">
+        </div>
+        <h2 id="nombrePokemon" class="pokemon-nombre"></h2>
+        <div class="search-container">
+            <input type="text" id="entradaPokemon" class="input-pokemon" placeholder="Ingrese el nombre o ID">
+            <button id="btnBuscar" class="btn-buscar">Buscar</button>
+        </div>
+    </main>
 </body>
 </html>
