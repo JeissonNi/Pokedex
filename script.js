@@ -21,10 +21,14 @@ async function buscar() {
           //Agregar nombre 
           document.getElementById("nombrePokemon").textContent = data.name;
 
-          //Agregar datos
+          // Obtener tipos y habilidades en español
+          let tipos = await traducirTipos(data.types);
+          let habilidades = await traducirHabilidades(data.abilities);
+
+          // Agregar datos traducidos
           document.getElementById("pokemonNumero").textContent = data.id;
-          document.getElementById("pokemonTipo").textContent = data.types.map(t => t.type.name).join(", ");
-          document.getElementById("pokemonHabilidades").textContent = data.abilities.map(a => a.ability.name).join(", ");
+          document.getElementById("pokemonTipo").textContent = tipos;
+          document.getElementById("pokemonHabilidades").textContent = habilidades;
           document.getElementById("pokemonPeso").textContent = data.weight / 10;
           document.getElementById("pokemonAltura").textContent = data.height / 10;
 
@@ -43,6 +47,30 @@ async function buscar() {
       alert("Hubo un error en la búsqueda. Verifica el nombre e intenta de nuevo.");
     }
   }
+
+  // Función para traducir tipos
+async function traducirTipos(tipos) {
+  let traducciones = [];
+  for (let tipo of tipos) {
+      let response = await fetch(tipo.type.url);
+      let data = await response.json();
+      let nombreEspanol = data.names.find(n => n.language.name === "es");
+      traducciones.push(nombreEspanol ? nombreEspanol.name : tipo.type.name);
+  }
+  return traducciones.join(", ");
+}
+
+// Función para traducir habilidades
+async function traducirHabilidades(habilidades) {
+  let traducciones = [];
+  for (let habilidad of habilidades) {
+      let response = await fetch(habilidad.ability.url);
+      let data = await response.json();
+      let nombreEspanol = data.names.find(n => n.language.name === "es");
+      traducciones.push(nombreEspanol ? nombreEspanol.name : habilidad.ability.name);
+  }
+  return traducciones.join(", ");
+}
   
   document.addEventListener("DOMContentLoaded", () => {
     let botonBuscar = document.getElementById("btnBuscar");
