@@ -69,6 +69,25 @@ body {
     margin-top: 10px;
 }
 
+/* ---- BOTÓN SONIDO ---- */
+.btn-sonido {
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: #ff414d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-bottom: 10px;
+    justify-self: center;
+}
+
+.btn-sonido:hover {
+    background-color: #d6323e;
+    transform: scale(1.05);
+}
+
 /* ---- INPUT Y BOTÓN ---- */
 .search-container {
     display: flex;
@@ -107,6 +126,18 @@ body {
 .btn-buscar:hover {
     background-color: #d6323e;
     transform: scale(1.05);
+}
+
+/* ---- ANIMACIÓN DE VIBRACIÓN ---- */
+@keyframes vibrar {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+}
+
+.vibrar {
+    animation: vibrar 0.2s linear infinite;
 }
 
 /* ---- RESPONSIVE DESIGN ---- */
