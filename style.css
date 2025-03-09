@@ -48,6 +48,16 @@ body {
     transform: scale(1.1);
 }
 
+/* ---- NOMBRE DEL POKÉMON ---- */
+.pokemon-nombre {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    transition: opacity 0.3s ease-in-out;
+}
+
 /* ---- INPUT Y BOTÓN ---- */
 .search-container {
     display: flex;
