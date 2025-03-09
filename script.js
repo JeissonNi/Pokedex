@@ -20,6 +20,14 @@ async function buscar() {
           
           //Agregar nombre
           document.getElementById("nombrePokemon").textContent = data.name;;
+
+          //Agregar datos
+          document.getElementById("pokemonNumero").textContent = data.id;
+          document.getElementById("pokemonTipo").textContent = data.types.map(t => t.type.name).join(", ");
+          document.getElementById("pokemonHabilidades").textContent = data.abilities.map(a => a.ability.name).join(", ");
+          document.getElementById("pokemonPeso").textContent = data.weight / 10;
+          document.getElementById("pokemonAltura").textContent = data.height / 10;
+
       } else {
           alert("No has ingresado un Pokémon válido");
       }
