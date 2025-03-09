@@ -155,3 +155,55 @@ body {
         width: 100%;
     }
 }
+
+/* Asegurar que el contenedor principal se ajuste */
+.container {
+    width: 90%; /* Reducir el ancho en pantallas pequeñas */
+    max-width: 400px; /* Limitar el ancho máximo */
+    margin: auto; /* Centrar */
+}
+
+/* Ajustar la imagen para que no desborde */
+.pokemon-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Hacer que el input y el botón sean más manejables en móvil */
+input[type="text"], button {
+    width: 100%; /* Ocupar todo el ancho */
+    padding: 10px; /* Hacer más cómodo el input */
+    font-size: 16px; /* Texto más grande para usabilidad */
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+    
+    h1 {
+        font-size: 24px; /* Reducir tamaño del título */
+    }
+
+    input[type="text"] {
+        font-size: 14px; /* Ajustar tamaño del texto */
+    }
+}
+
+.search-container {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Espaciado entre input y botón */
+}
+
+.input-pokemon {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 2px solid #000;
+}
