@@ -92,6 +92,14 @@ function reproducirSonido(url) {
   }).catch(error => console.error("Error al reproducir el sonido:", error));
 }
 
+document.getElementById("entradaPokemon").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+      event.preventDefault(); // Evita que el formulario se envíe si está dentro de un form
+      document.getElementById("btnBuscar").click(); // Simula el clic en el botón
+  }
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
   let botonBuscar = document.getElementById("btnBuscar");
   botonBuscar.onclick = buscar;
