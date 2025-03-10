@@ -3,9 +3,8 @@ async function buscar() {
     let imgPokemon = document.getElementById("imgPokemon");
     let entradaPokemon = document.getElementById("entradaPokemon");
 
-    document.getElementById("datosContainer").style.display = "block";
-
     if (entradaPokemon.value.trim() !== "") {
+
       let url =
         "https://pokeapi.co/api/v2/pokemon/" +
         entradaPokemon.value.toLowerCase();
@@ -15,6 +14,8 @@ async function buscar() {
       if (!response.ok) {
         throw new Error("Pokémon no encontrado");
       }
+
+      document.getElementById("datosContainer").style.display = "block";
 
       let data = await response.json();
 
